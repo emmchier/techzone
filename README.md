@@ -26,3 +26,13 @@ yarn dev
 - En "pages". Limpiar "index.tsx". Crear "404.tsx". Ajustar \_app.tsx + ver código.
 - Correr proyecto y que todo funcione.
 - Commit.
+
+3- Styled Components
+
+# with npm
+
+npm install --save styled-components
+
+# with yarn
+
+yarn add styled-components
