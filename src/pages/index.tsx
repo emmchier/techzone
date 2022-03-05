@@ -1,10 +1,11 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import Icon from "../components/atomic-design/atoms/icon";
 import Page from "../components/common/page";
 import {
   AerolabIsotype,
   AerolabLogo,
-  AerolaLogoCircle,
+  AerolabLogoCircle,
   ArrowIcon,
   BrowseIcon,
   ChevronIcon,
@@ -26,7 +27,7 @@ const Home: NextPage = () => {
       image="/metadata.png"
     >
       <AerolabIsotype />
-      <AerolaLogoCircle />
+      <AerolabLogoCircle />
       <AerolabLogo />
       <ArrowIcon />
       {/* <WavesPattern />
@@ -45,6 +46,7 @@ const Home: NextPage = () => {
         width={500}
         height={500}
       /> */}
+      <Icon iconType="choose" />
     </Page>
   );
 };
