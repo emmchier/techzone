@@ -1,15 +1,17 @@
 import Link from "next/link";
 import React from "react";
+import useIsMobile from "../../../hooks/useIsMobile";
 import useScroll from "../../../hooks/useScroll";
 import Button from "../../atomic-design/atoms/button";
 import Icon from "../../atomic-design/atoms/icon";
-import { AerolabLogo } from "../../ui/icons";
+import { AerolabIsotype, AerolabLogo } from "../../ui/icons";
 import Container from "../container";
 
 import { Header, Content, Brand, Background } from "./styles";
 
 const Navbar = () => {
   const isFixed = useScroll();
+  const isMobile = useIsMobile("tablet");
 
   return (
     <Header>
@@ -18,7 +20,13 @@ const Navbar = () => {
         <Content isFixed={isFixed}>
           <Link href="/" passHref>
             <Brand>
-              <AerolabLogo aria-label="Aerolab Logo" />
+              {!isMobile ? (
+                <AerolabLogo aria-label="Aerolab Logo" />
+              ) : (
+                <span>
+                  <AerolabIsotype aria-label="Aerolab isotype" />
+                </span>
+              )}
             </Brand>
           </Link>
           <Button

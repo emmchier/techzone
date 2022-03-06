@@ -54,4 +54,10 @@ export const Content = styled.div<NavbarTypes>`
         `};
 `;
 
-export const Brand = styled.div``;
+export const Brand = styled.div`
+  span {
+    svg {
+      height: ${({ theme }) => theme.spacing(7)};
+    }
+  }
+`;
