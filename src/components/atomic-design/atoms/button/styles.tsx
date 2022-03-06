@@ -192,7 +192,8 @@ const Content = styled.button<ButtonTypes>`
   &:disabled {
     cursor: inherit;
   }
-  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: ${({ theme }) => theme.font.text.l1.mob.size};
   }
 `;
 
