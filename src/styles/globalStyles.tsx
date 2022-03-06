@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     overflow-x: hidden;
     font-family: ${({ theme }) => theme.font.family};
-    font-size: ${({ theme }) => theme.font.text.l1.default.desk.size};
+    font-size: ${({ theme }) => theme.font.text.l1.desk.size};
   }
   * {
     text-decoration: none;

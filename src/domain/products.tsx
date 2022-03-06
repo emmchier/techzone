@@ -128,8 +128,8 @@ export const products = [
     cost: 2500,
     category: "phones",
     img: {
-      url: "https://coding-challenge-api.aerolab.co/images/SamsungS8-x22.png",
-      hdUrl: "https://coding-challenge-api.aerolab.co/images/SamsungS8-x2.png",
+      url: "https://coding-challenge-api.aerolab.co/images/NikonD300-x2.png",
+      hdUrl: "https://coding-challenge-api.aerolab.co/images/NikonD300-x2.png",
     },
   },
   {

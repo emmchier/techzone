@@ -3,6 +3,7 @@
 export const theme = {
   color: {
     neutral: {
+      blue: "#176FEB",
       grey900: "#252F3D",
       grey600: "#7C899C",
       grey500: "#8FA3BF",
@@ -66,72 +67,30 @@ export const theme = {
           lineHeight: "100%",
         },
       },
-      weight: 900,
-      textTransform: "uppercase",
     },
     text: {
       l1: {
-        default: {
-          desk: {
-            size: "1rem", // 18px
-            lineHeight: "150%",
-          },
-          mob: {
-            size: "0.889rem", // 16px
-            lineHeight: "150%",
-          },
-          letterSpacing: "0",
+        desk: {
+          size: "1rem", // 18px
         },
-        allCaps: {
-          desk: {
-            size: "1rem", // 18px
-            lineHeight: "150%",
-          },
-          mob: {
-            size: "0.889rem", // 16px
-            lineHeight: "150%",
-          },
-          letterSpacing: "0.24em",
-          textTransform: "uppercase",
-        },
-        light: {
-          desk: {
-            size: "1rem", // 18px
-            lineHeight: "150%",
-          },
-          mob: {
-            size: "0.889rem", // 16px
-            lineHeight: "150%",
-          },
-          letterSpacing: "0",
+        mob: {
+          size: "0.889rem", // 16px
         },
       },
       l2: {
-        default: {
-          desk: {
-            size: "0.778rem", // 14px
-            lineHeight: "150%",
-          },
-          mob: {
-            size: "0.667rem", // 12px
-            lineHeight: "150%",
-          },
-          letterSpacing: "0",
+        desk: {
+          size: "0.778rem", // 14px
         },
-        allCaps: {
-          desk: {
-            size: "0.778rem", // 14px
-            lineHeight: "150%",
-          },
-          mob: {
-            size: "0.667rem", // 12px
-            lineHeight: "150%",
-          },
-          letterSpacing: "0.05em",
-          textTransform: "uppercase",
+        mob: {
+          size: "0.667rem", // 12px
         },
       },
-      weight: 600,
+      lineHeight: "1.5rem", // 27px
+    },
+    weight: {
+      light: 300,
+      medium: 500,
+      bold: 900,
     },
   },
   spacing: (pixel: number) => `${0.25 * pixel}rem`,
