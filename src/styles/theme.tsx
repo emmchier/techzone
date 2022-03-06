@@ -3,7 +3,6 @@
 export const theme = {
   color: {
     neutral: {
-      blue: "#176FEB",
       grey900: "#252F3D",
       grey600: "#7C899C",
       grey500: "#8FA3BF",
@@ -13,6 +12,8 @@ export const theme = {
       white: "#FFFFFF",
     },
     brand: {
+      blue: "#176FEB",
+      pink: "#F279F2",
       default: "linear-gradient(102.47deg, #176FEB -5.34%, #FF80FF 106.58%)",
       hover: "linear-gradient(102.47deg, #1667D9 -5.34%, #F279F2 106.58%)",
       light: "#E5F0FF",
