@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     overflow-x: hidden;
     font-family: ${({ theme }) => theme.font.family};
-    font-size: ${({ theme }) => theme.font.size.medium};
+    font-size: ${({ theme }) => theme.font.text.l1.default.desk.size};
   }
   * {
     text-decoration: none;
@@ -18,11 +18,11 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
   p {
-    color: ${({ theme }) => theme.color.text.primary};
+    color: ${({ theme }) => theme.color.neutral.grey600};
   }
   a {
     list-style: none;
     text-decoration: none;
-    color: ${({ theme }) => theme.color.text.primary};
+    color: ${({ theme }) => theme.color.neutral.grey600};
   }
 `;

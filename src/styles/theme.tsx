@@ -2,83 +2,156 @@
 
 export const theme = {
   color: {
-    primary: {
-      main: "#49D6D2",
-      light: "#EDFFFF",
-      dark: "#00A4A1",
+    neutral: {
+      grey900: "#252F3D",
+      grey600: "#7C899C",
+      grey500: "#8FA3BF",
+      grey300: "#DAE4F2",
+      grey200: "#E6EDF7",
+      grey100: "#F5F9FF",
+      white: "#FFFFFF",
     },
-    secondary: {
-      main: "#7D31AE",
-      light: "#F2F0FE",
-      dark: "#3F349D",
+    brand: {
+      default: "linear-gradient(102.47deg, #176FEB -5.34%, #FF80FF 106.58%)",
+      hover: "linear-gradient(102.47deg, #1667D9 -5.34%, #F279F2 106.58%)",
+      light: "#E5F0FF",
+      light2: "#CCE1FF",
     },
-    text: {
-      primary: "#626161",
-      secondary: "#808080",
-      tag: "#6957F0",
-      error: "#EF4E1B",
-      success: "#00A4A1",
+    green: {
+      default: "#29CC74",
+      light: "#CCFFE3",
     },
-    gradient: {
-      primary:
-        "linear-gradient(68.08deg, rgba(178, 199, 244, 0.3) 30%, rgba(178, 199, 244, 0.3) 30%, rgba(233, 255, 255, 0.8) 80%);",
+    red: {
+      default: "#E07F4F",
+      light: "#FFDFD9",
     },
-    background: {
-      primary: "#EDFFFF",
-      secondary: "#F2F0FE",
-      tag: "#E3EDFB",
+    specials: {
+      illustrationBG:
+        "linear-gradient(102.47deg, #7296EB -5.34%, #EAC0E9 106.58%, #EAC0E9 106.58%)",
+      sectionBG:
+        "linear-gradient(102.47deg, rgba(23, 111, 235, 0.5) -5.34%, rgba(255, 128, 255, 0.5) 106.58%)",
+      aerolab: "linear-gradient(180deg, #FF8800 0%, #FF6600 100%)",
     },
-    disabled: "#DFDFDF",
-    white: "#FFFFFF",
-    black: "#2E2E2E",
-    overlay: "#00000069",
-    hoverButton: "#ddfdfd",
   },
   font: {
     family: "'Montserrat', 'sans-serif'",
-    size: {
-      largeXXX: "3rem", // 48px
-      largeXX: "2.5rem", // 40px
-      largeX: "2rem", // 32px
-      large: "1.5rem", // 24px
-      medium: "1.25rem", // 20px
-      small: "1rem", // 16px
-      smallX: "0.875rem", // 14px
+    title: {
+      l1: {
+        desk: {
+          size: "11.111rem", // 200px
+          lineHeight: "80%",
+        },
+        mob: {
+          size: "5.333rem", // 96px
+          lineHeight: "80%",
+        },
+      },
+      l2: {
+        desk: {
+          size: "2.667rem", // 48px
+          lineHeight: "80%",
+        },
+        mob: {
+          size: "1.778rem", // 32px
+          lineHeight: "80%",
+        },
+      },
+      l3: {
+        desk: {
+          size: "1.778rem", // 32px
+          lineHeight: "100%",
+        },
+        mob: {
+          size: "1.333rem", // 24px
+          lineHeight: "100%",
+        },
+      },
+      weight: 900,
+      textTransform: "uppercase",
     },
-    lineHeight: {
-      largeXXX: "3.688rem", // 59px
-      largeXX: "3.125rem", // 50px
-      largeX: "2.813rem", // 45px
-      large: "2.625rem", // 42px
-      medium: "2.125rem", // 34px
-      small: "1.875rem", // 30px
-      smallX: "1.625rem", // 26px
-      smallXX: "1.5rem", // 24px
-    },
-    weight: {
-      light: 300,
-      regular: 400,
-      medium: 500,
-      semiBold: 600,
-      bold: 700,
+    text: {
+      l1: {
+        default: {
+          desk: {
+            size: "1rem", // 18px
+            lineHeight: "150%",
+          },
+          mob: {
+            size: "0.889rem", // 16px
+            lineHeight: "150%",
+          },
+          letterSpacing: "0",
+        },
+        allCaps: {
+          desk: {
+            size: "1rem", // 18px
+            lineHeight: "150%",
+          },
+          mob: {
+            size: "0.889rem", // 16px
+            lineHeight: "150%",
+          },
+          letterSpacing: "0.24em",
+          textTransform: "uppercase",
+        },
+        light: {
+          desk: {
+            size: "1rem", // 18px
+            lineHeight: "150%",
+          },
+          mob: {
+            size: "0.889rem", // 16px
+            lineHeight: "150%",
+          },
+          letterSpacing: "0",
+        },
+      },
+      l2: {
+        default: {
+          desk: {
+            size: "0.778rem", // 14px
+            lineHeight: "150%",
+          },
+          mob: {
+            size: "0.667rem", // 12px
+            lineHeight: "150%",
+          },
+          letterSpacing: "0",
+        },
+        allCaps: {
+          desk: {
+            size: "0.778rem", // 14px
+            lineHeight: "150%",
+          },
+          mob: {
+            size: "0.667rem", // 12px
+            lineHeight: "150%",
+          },
+          letterSpacing: "0.05em",
+          textTransform: "uppercase",
+        },
+      },
+      weight: 600,
     },
   },
   spacing: (pixel: number) => `${0.25 * pixel}rem`,
   shadow: {
-    main: `
-              0px 0px 1px rgba(0, 0, 0, 0.04),
-              0px 2px 6px rgba(76, 81, 191, 0.12),
-              0px 10px 20px rgba(76, 81, 191, 0.18)`,
+    elevation1: {
+      default: "0px 2px 8px rgba(0, 0, 0, 0.05)",
+      hover: "0px 2px 12px rgba(0, 0, 0, 0.08)",
+    },
+    elevation2: "0px 2px 40px rgba(0, 0, 0, 0.05)",
   },
   transition: {
     main: "0.1s ease-in-out",
   },
   border: {
-    radius: {
-      small: "5px",
-      main: "8px",
-      full: "50%",
-    },
+    radius8: "0.444rem", // 8px
+    radius12: "0.667rem", // 12px
+    radius16: "0.889rem", // 16px
+    radius24: "1.333rem", // 24px
+    radius32: "1.778rem", // 32px
+    radius104: "5.778rem", // 104px
   },
   breakpoints: {
     smallMobile: "max-width: 479px",

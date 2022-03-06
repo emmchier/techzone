@@ -18,6 +18,7 @@ import {
   SuccessIcon,
   WavesPattern,
 } from "../components/ui/icons";
+import { products } from "../domain/products";
 
 const Home: NextPage = () => {
   return (
@@ -40,6 +41,22 @@ const Home: NextPage = () => {
       <GithubIcon />
       <ErrorIcon />
       <SuccessIcon />
+      {/* <ul>
+        {products.map((product) => (
+          <li key={product._id}>
+            <Image
+              src={product.img.url !== "" ? product.img.url : "/icons/logo.svg"}
+              alt={product.name}
+              layout="responsive"
+              objectFit="contain"
+              width="100%"
+              height="100%"
+            />
+            <h6>{product.name}</h6>
+            <p>{product.category}</p>
+          </li>
+        ))}
+      </ul> */}
       {/* <Image
         src="/static/hero-desktop.png"
         alt="Vercel Logo"
