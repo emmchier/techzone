@@ -1,5 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "../../../providers/ThemeProvider";
+import ScrollToTop from "../../atomic-design/atoms/scroll-top";
 
 import Footer from "../footer";
 import Navbar from "../navbar";
@@ -12,6 +13,7 @@ const Layout: React.FC = ({ children }) => {
         <Navbar />
         {children}
         <Footer />
+        <ScrollToTop />
       </Body>
     </ThemeProvider>
   );

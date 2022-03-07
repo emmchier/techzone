@@ -112,6 +112,7 @@ export const theme = {
     radius24: "1.333rem", // 24px
     radius32: "1.778rem", // 32px
     radius104: "5.778rem", // 104px
+    radiusFull: "50%",
   },
   breakpoints: {
     smallMobile: "max-width: 479px",
