@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+
 import { theme } from "../../../styles/theme";
-import Button from "../../atomic-design/atoms/button";
+import Button from "../../atomic-design/atoms/buttons/button";
 import Icon from "../../atomic-design/atoms/icon";
 import Container from "../container";
 import Content from "./styles";

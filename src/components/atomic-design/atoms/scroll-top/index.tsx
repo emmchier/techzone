@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Button from "../buttons/button";
 
-import Button from "../button";
 import Icon from "../icon";
 import Content from "./styles";
 

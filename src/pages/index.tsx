@@ -1,14 +1,19 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import Button from "../components/atomic-design/atoms/button";
+import Button from "../components/atomic-design/atoms/buttons/button";
 import Col from "../components/atomic-design/atoms/grid/col";
 import Row from "../components/atomic-design/atoms/grid/row";
 import Heading from "../components/atomic-design/atoms/heading";
 import Icon from "../components/atomic-design/atoms/icon";
 import Text from "../components/atomic-design/atoms/text";
 import Card from "../components/atomic-design/molecules/cards/card";
+import ProductCard from "../components/atomic-design/molecules/cards/product-card";
+import AeropayCard from "../components/atomic-design/organisms/aeropay/aeropay-card";
+import ProductList from "../components/atomic-design/organisms/product-list";
+import WalkthroughList from "../components/atomic-design/organisms/walkthrough-list";
 import Page from "../components/common/page";
 import Section from "../components/common/section";
+import { walkthroughList } from "../domain/cards-list";
 import { products } from "../domain/products";
 import { theme } from "../styles/theme";
 
@@ -20,7 +25,7 @@ const Home: NextPage = () => {
       image="/metadata.png"
     >
       <Section container="sm">
-        <Button ariaLabel="lala">
+        {/* <Button ariaLabel="lala">
           Redeem for
           <Icon
             iconType="logoCircle"
@@ -72,7 +77,7 @@ const Home: NextPage = () => {
         </Button>
         <Button ariaLabel="lala" variant="icon">
           <Icon iconType="close" />
-        </Button>
+        </Button> */}
         {/* <Heading type="l1" variant="h1">
           <b>tech</b> zone
         </Heading>
@@ -95,18 +100,9 @@ const Home: NextPage = () => {
         <Text type="l2" cap="allCaps">
           Cameras
         </Text> */}
-        <Row gap={5}>
-          {products.map((product) => (
-            <Col xs={12} sm={12} md={4} lg={3} xlg={3} key={product._id}>
-              <Card
-                image={product.img.url && product.img.url}
-                alt={product.name}
-                title={product.name}
-                description={product.category}
-              />
-            </Col>
-          ))}
-        </Row>
+
+        <WalkthroughList list={walkthroughList} />
+        <ProductList list={products} />
       </Section>
     </Page>
   );

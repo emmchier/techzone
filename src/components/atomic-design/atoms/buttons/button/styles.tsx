@@ -14,7 +14,8 @@ const sizeStyles = (theme, size: string) =>
       border-radius: ${theme.border.radius24} !important;
     `,
     default: css`
-      padding: ${theme.spacing(3)} ${theme.spacing(12.6)};
+      width: 100%;
+      padding: ${theme.spacing(3)} 0;
       svg {
         padding: 0 ${theme.spacing(1.3)};
         height: ${theme.spacing(5)};
@@ -26,7 +27,7 @@ const sizeStyles = (theme, size: string) =>
       /* padding: 8px 24px; */
     `,
     small: css`
-      padding: ${theme.spacing(0.4)} ${theme.spacing(3.5)};
+      padding: ${theme.spacing(1)} 0};
       border-radius: ${theme.border.radius12} !important;
       /* padding: 4px 16px; */
     `,
