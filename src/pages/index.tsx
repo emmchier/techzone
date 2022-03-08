@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { getProducts, getUser } from "../api/service";
 import Button from "../components/atomic-design/atoms/buttons/button";
 import Col from "../components/atomic-design/atoms/grid/col";
 import Row from "../components/atomic-design/atoms/grid/row";
@@ -18,6 +20,17 @@ import { products } from "../domain/products";
 import { theme } from "../styles/theme";
 
 const Home: NextPage = () => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const currentUser = getUser();
+    console.log(currentUser);
+
+    getProducts().then((productList) => {
+      setProducts(productList);
+    });
+    console.log(products);
+  }, []);
+
   return (
     <Page
       title="Aerolab | Developer Challenge"
@@ -101,7 +114,7 @@ const Home: NextPage = () => {
           Cameras
         </Text> */}
 
-        <WalkthroughList list={walkthroughList} />
+        {/* <WalkthroughList list={walkthroughList} /> */}
         <ProductList list={products} />
       </Section>
     </Page>

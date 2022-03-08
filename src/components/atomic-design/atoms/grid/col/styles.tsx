@@ -42,6 +42,7 @@ const getBreackpoint = (bpt: Column) => {
 };
 
 export const GridCol = styled.li<GridItemI>`
+  margin-top: 0 !important;
   display: flex;
   list-style: none;
   flex-grow: 0;
