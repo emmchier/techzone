@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import { getProducts, getUser } from "../api/service";
-import { ProductContext, UserContext } from "../context";
+import { getProducts } from "../api/service";
+import { ProductContext } from "../context";
 import { Product } from "../interfaces";
 
 interface ProductProviderI {

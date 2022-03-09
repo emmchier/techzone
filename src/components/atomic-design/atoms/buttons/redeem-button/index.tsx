@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { postPoints, postReedem } from "../../../../../api/service";
-import { UserContext } from "../../../../../context";
-import { UserType } from "../../../../../interfaces";
+import { ToastContext, UserContext } from "../../../../../context";
+import { ToastType, UserType } from "../../../../../interfaces";
 import { theme } from "../../../../../styles/theme";
 
 import Icon from "../../icon";
@@ -10,11 +10,14 @@ import Button from "../button";
 type RedeemTypes = {
   id: string;
   cost: number;
+  name: string;
 };
 
-const RedeemButton = ({ id, cost }: RedeemTypes) => {
+const RedeemButton = ({ id, cost, name }: RedeemTypes) => {
   const { user, setUser } = useContext(UserContext) as UserType;
   const { points } = user;
+
+  const { toast, setToast } = useContext(ToastContext) as ToastType;
 
   const [processing, setProcessing] = useState(false);
 
@@ -24,10 +27,21 @@ const RedeemButton = ({ id, cost }: RedeemTypes) => {
   const handleRedeem = () => {
     setProcessing(true);
     setTimeout(() => {
-      postReedem(id);
-      setUser({ ...user, points: points - cost });
-      alert(`${id} redeemed`);
       setProcessing(false);
+      setToast({
+        ...toast,
+        type: "success",
+        message: `${name} redeemed successfully`,
+        isShowing: true,
+      });
+      setTimeout(() => {
+        setToast({
+          ...toast,
+          isShowing: false,
+        });
+      }, 6000);
+      // postReedem(id);
+      // setUser({ ...user, points: points - cost });
     }, 3000);
   };
 

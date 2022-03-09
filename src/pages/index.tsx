@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getProducts, getUser } from "../api/service";
 import Button from "../components/atomic-design/atoms/buttons/button";
 import Col from "../components/atomic-design/atoms/grid/col";
@@ -8,6 +8,7 @@ import Row from "../components/atomic-design/atoms/grid/row";
 import Heading from "../components/atomic-design/atoms/heading";
 import Icon from "../components/atomic-design/atoms/icon";
 import Text from "../components/atomic-design/atoms/text";
+import Toast from "../components/atomic-design/atoms/toast";
 import Card from "../components/atomic-design/molecules/cards/card";
 import ProductCard from "../components/atomic-design/molecules/cards/product-card";
 import AeropayCard from "../components/atomic-design/organisms/aeropay/aeropay-card";
@@ -16,11 +17,14 @@ import ProductList from "../components/atomic-design/organisms/product-list";
 import WalkthroughList from "../components/atomic-design/organisms/walkthrough-list";
 import Page from "../components/common/page";
 import Section from "../components/common/section";
+import { ToastContext } from "../context";
 import { walkthroughList } from "../domain/cards-list";
 import { products } from "../domain/products";
+import { ToastType } from "../interfaces";
 import { theme } from "../styles/theme";
 
 const Home: NextPage = () => {
+  const { toast, setToast } = useContext(ToastContext) as ToastType;
   return (
     <Page
       title="Aerolab | Developer Challenge"
@@ -107,6 +111,11 @@ const Home: NextPage = () => {
         {/* <WalkthroughList list={walkthroughList} /> */}
         <ProductFilter />
       </Section>
+      <Toast
+        type={toast.type}
+        message={toast.message}
+        isShowing={toast.isShowing}
+      />
     </Page>
   );
 };

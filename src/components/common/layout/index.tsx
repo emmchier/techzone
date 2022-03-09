@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ToastContext } from "../../../context";
+import { ToastType } from "../../../interfaces";
 import ProductProvider from "../../../providers/ProductProvider";
 import { ThemeProvider } from "../../../providers/ThemeProvider";
+import ToastProvider from "../../../providers/ToastProvider";
 import UserProvider from "../../../providers/UserProvider";
 import ScrollToTop from "../../atomic-design/atoms/scroll-top";
 
@@ -12,14 +15,16 @@ const Layout: React.FC = ({ children }) => {
   return (
     <UserProvider>
       <ProductProvider>
-        <ThemeProvider>
-          <Body>
-            <Navbar />
-            {children}
-            <Footer />
-            <ScrollToTop />
-          </Body>
-        </ThemeProvider>
+        <ToastProvider>
+          <ThemeProvider>
+            <Body>
+              <Navbar />
+              {children}
+              <Footer />
+              <ScrollToTop />
+            </Body>
+          </ThemeProvider>
+        </ToastProvider>
       </ProductProvider>
     </UserProvider>
   );

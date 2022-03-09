@@ -33,7 +33,7 @@ const ProductCard = ({
         isSkeleton={isSkeleton}
       />
       <ButtonContainer isSkeleton={isSkeleton}>
-        <RedeemButton id={id} cost={cost} />
+        <RedeemButton id={id} cost={cost} name={name} />
       </ButtonContainer>
     </Content>
   );

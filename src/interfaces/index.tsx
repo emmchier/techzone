@@ -23,3 +23,14 @@ export interface Product {
 export type ProductType = {
   products: Product[];
 };
+
+export interface Toast {
+  type: string;
+  message: string;
+  isShowing: boolean;
+}
+
+export type ToastType = {
+  toast: Toast;
+  setToast: Function;
+};
