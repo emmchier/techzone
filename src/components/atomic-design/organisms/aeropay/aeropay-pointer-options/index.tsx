@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import { postPoints } from "../../../../../api/service";
-import { UserContext } from "../../../../../context";
+import { ToastContext, UserContext } from "../../../../../context";
 import { pointerOptions } from "../../../../../domain/pointer-options";
-import { UserType } from "../../../../../interfaces";
+import { showCustomToast } from "../../../../../helpers";
+import { ToastType, UserType } from "../../../../../interfaces";
 
 import Button from "../../../atoms/buttons/button";
 import Icon from "../../../atoms/icon";
@@ -12,9 +13,18 @@ const PointerOptions = () => {
   const { user, setUser } = useContext(UserContext) as UserType;
   const [selected, setSelected] = useState(0);
 
+  const { toast, setToast } = useContext(ToastContext) as ToastType;
+
   const handlePoints = (newPoints: number) => {
     postPoints(newPoints);
     setUser({ ...user, points: user.points + newPoints });
+    showCustomToast(
+      "success",
+      `${selected} points added!`,
+      toast,
+      setToast,
+      6000
+    );
   };
   return (
     <>

@@ -108,7 +108,7 @@ const Home: NextPage = () => {
           Cameras
         </Text> */}
 
-        {/* <WalkthroughList list={walkthroughList} /> */}
+        <WalkthroughList list={walkthroughList} />
         <ProductFilter />
       </Section>
       <Toast

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { postPoints, postReedem } from "../../../../../api/service";
 import { ToastContext, UserContext } from "../../../../../context";
+import { showCustomToast } from "../../../../../helpers";
 import { ToastType, UserType } from "../../../../../interfaces";
 import { theme } from "../../../../../styles/theme";
 
@@ -28,20 +29,15 @@ const RedeemButton = ({ id, cost, name }: RedeemTypes) => {
     setProcessing(true);
     setTimeout(() => {
       setProcessing(false);
-      setToast({
-        ...toast,
-        type: "success",
-        message: `${name} redeemed successfully`,
-        isShowing: true,
-      });
-      setTimeout(() => {
-        setToast({
-          ...toast,
-          isShowing: false,
-        });
-      }, 6000);
-      // postReedem(id);
-      // setUser({ ...user, points: points - cost });
+      postReedem(id);
+      setUser({ ...user, points: points - cost });
+      showCustomToast(
+        "success",
+        `${name} redeemed successfully`,
+        toast,
+        setToast,
+        6000
+      );
     }, 3000);
   };
 

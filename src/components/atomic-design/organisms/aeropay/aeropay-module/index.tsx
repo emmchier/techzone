@@ -9,7 +9,7 @@ import Icon from "../../../atoms/icon";
 import Text from "../../../atoms/text";
 import AeropayCard from "../aeropay-card";
 import PointerOptions from "../aeropay-pointer-options";
-import { Body, Content, Header, PointOptions } from "./styles";
+import { Body, Content, Header } from "./styles";
 
 const AeropayModule = ({ show, setShow }) => {
   return (
