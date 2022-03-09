@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
+import { postPoints } from "../../../../../api/service";
+import { UserContext } from "../../../../../context";
+import { UserType } from "../../../../../interfaces";
 import Button from "../../../atoms/buttons/button";
 import Icon from "../../../atoms/icon";
 import Text from "../../../atoms/text";
@@ -6,6 +9,13 @@ import AeropayCard from "../aeropay-card";
 import { Body, Content, Header, PointOptions } from "./styles";
 
 const AeropayModule = ({ show, setShow }) => {
+  const { user, setUser } = useContext(UserContext) as UserType;
+
+  const handlePoints = (newPoints: number) => {
+    postPoints(newPoints);
+    setUser({ ...user, points: user.points + newPoints });
+  };
+
   return (
     <Content
       show={show && show}
@@ -21,7 +31,12 @@ const AeropayModule = ({ show, setShow }) => {
         <AeropayCard />
         <PointOptions>
           <li>
-            <Button ariaLabel="add 1000 points" size="small" state="unselected">
+            <Button
+              onClick={() => handlePoints(1000)}
+              ariaLabel="add 1000 points"
+              size="small"
+              state="unselected"
+            >
               <span>1000</span>
             </Button>
           </li>

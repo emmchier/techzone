@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { UserContext, UserI } from "../../../../../context";
 import Button from "../../../atoms/buttons/button";
 
 import Icon from "../../../atoms/icon";
@@ -8,6 +9,8 @@ import { Container, MenuContent, Content, ArrowContainer } from "./styles";
 
 const AeropayDropdown = ({ isSkeleton = false }) => {
   const [show, setShow] = useState(false);
+
+  const { user } = useContext<UserI>(UserContext);
 
   return (
     <Container
@@ -22,7 +25,7 @@ const AeropayDropdown = ({ isSkeleton = false }) => {
           size="medium"
         >
           <Icon iconType="logoCircle" />
-          <b>10.000</b>
+          <b>{user.points}</b>
           <ArrowContainer>
             <Icon iconType="chevron" direction={show ? "right" : "left"} />
           </ArrowContainer>

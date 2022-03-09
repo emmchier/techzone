@@ -1,5 +1,7 @@
 import React from "react";
+import ProductProvider from "../../../providers/ProductProvider";
 import { ThemeProvider } from "../../../providers/ThemeProvider";
+import UserProvider from "../../../providers/UserProvider";
 import ScrollToTop from "../../atomic-design/atoms/scroll-top";
 
 import Footer from "../footer";
@@ -8,14 +10,18 @@ import Body from "./styles";
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <ThemeProvider>
-      <Body>
-        <Navbar />
-        {children}
-        <Footer />
-        <ScrollToTop />
-      </Body>
-    </ThemeProvider>
+    <UserProvider>
+      <ProductProvider>
+        <ThemeProvider>
+          <Body>
+            <Navbar />
+            {children}
+            <Footer />
+            <ScrollToTop />
+          </Body>
+        </ThemeProvider>
+      </ProductProvider>
+    </UserProvider>
   );
 };
 

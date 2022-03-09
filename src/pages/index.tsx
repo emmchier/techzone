@@ -11,6 +11,7 @@ import Text from "../components/atomic-design/atoms/text";
 import Card from "../components/atomic-design/molecules/cards/card";
 import ProductCard from "../components/atomic-design/molecules/cards/product-card";
 import AeropayCard from "../components/atomic-design/organisms/aeropay/aeropay-card";
+import ProductFilter from "../components/atomic-design/organisms/product-filter";
 import ProductList from "../components/atomic-design/organisms/product-list";
 import WalkthroughList from "../components/atomic-design/organisms/walkthrough-list";
 import Page from "../components/common/page";
@@ -20,17 +21,6 @@ import { products } from "../domain/products";
 import { theme } from "../styles/theme";
 
 const Home: NextPage = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    const currentUser = getUser();
-    console.log(currentUser);
-
-    getProducts().then((productList) => {
-      setProducts(productList);
-    });
-    console.log(products);
-  }, []);
-
   return (
     <Page
       title="Aerolab | Developer Challenge"
@@ -115,7 +105,7 @@ const Home: NextPage = () => {
         </Text> */}
 
         {/* <WalkthroughList list={walkthroughList} /> */}
-        <ProductList list={products} />
+        <ProductFilter />
       </Section>
     </Page>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import Content from "./styles";
+import Content, { ButtonI } from "./styles";
 
 const Button = ({
   children,
@@ -8,7 +8,7 @@ const Button = ({
   size = "default",
   state = "",
   ...rest
-}) => {
+}: ButtonI) => {
   return (
     <Content
       aria-label={ariaLabel}

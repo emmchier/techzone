@@ -1,18 +1,50 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { postPoints, postReedem } from "../../../../../api/service";
+import { UserContext } from "../../../../../context";
+import { UserType } from "../../../../../interfaces";
+import { theme } from "../../../../../styles/theme";
 
 import Icon from "../../icon";
 import Button from "../button";
 
-const RedeemButton = () => {
+type RedeemTypes = {
+  id: string;
+  cost: number;
+};
+
+const RedeemButton = ({ id, cost }: RedeemTypes) => {
+  const { user, setUser } = useContext(UserContext) as UserType;
+  const { points } = user;
+
+  const [processing, setProcessing] = useState(false);
+
+  const rest = points < cost ? cost - points : cost;
+  const setTitle = points < cost ? "You need" : "Redeem for";
+
+  const handleRedeem = () => {
+    setProcessing(true);
+    setTimeout(() => {
+      postReedem(id);
+      setUser({ ...user, points: points - cost });
+      alert(`${id} redeemed`);
+      setProcessing(false);
+    }, 3000);
+  };
+
   return (
-    <Button ariaLabel="redeem product">
-      Redeem for
+    <Button
+      onClick={handleRedeem}
+      ariaLabel="redeem product"
+      disabled={points < cost ? true : false}
+      state={processing === true && "processing"}
+    >
+      {processing !== true ? setTitle : "Processing..."}
       <Icon
         iconType="logoCircle"
-        color="#FFFFFF"
-        background="url(#paint0_linear_485_5621)"
+        color={points < cost ? theme.color.neutral.grey500 : "#FFFFFF"}
+        background={points < cost ? "#FFFFFF" : "url(#paint0_linear_485_5621)"}
       />
-      12.500
+      {cost ? rest : 0}
     </Button>
   );
 };

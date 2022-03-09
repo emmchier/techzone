@@ -12,9 +12,11 @@ const ProductList = ({ list }) => {
         list.map((product) => (
           <Col xs={12} sm={12} md={4} lg={3} xlg={3} key={product._id}>
             <ProductCard
+              id={product._id && product._id}
               img={product.img.url && product.img.url}
               alt={product.name && product.name}
               name={product.name && product.name}
+              cost={product.cost && product.cost}
               category={product.category && product.category}
               isSkeleton={false}
             />

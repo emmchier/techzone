@@ -1,10 +1,12 @@
 import styled, { css } from "styled-components";
 
-type ButtonTypes = {
+export interface ButtonI {
+  children?: React.ReactNode;
   size?: string;
   state?: string;
   variant?: string;
-};
+  ariaLabel?: string;
+}
 
 const sizeStyles = (theme, size: string) =>
   ({
@@ -160,7 +162,7 @@ const variantStyles = (theme, variant: string) =>
     `,
   }[variant]);
 
-const Content = styled.button<ButtonTypes>`
+const Content = styled.button<ButtonI>`
   position: relative;
   display: flex;
   flex-direction: row;
