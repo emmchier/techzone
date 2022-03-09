@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { getProducts } from "../api/service";
 import { ProductContext } from "../context";
@@ -11,6 +11,12 @@ interface ProductProviderI {
 const ProductProvider = ({ children }: ProductProviderI) => {
   const [products, setProducts] = useState<Product[]>([]);
 
+  const categories = useMemo<string[]>(() => {
+    const categoryList = products.map((category) => category.category);
+    categoryList.unshift("All Products");
+    return [...new Set(categoryList)];
+  }, [products]);
+
   useEffect(() => {
     getProducts().then((product) => {
       setProducts(product);
@@ -18,7 +24,7 @@ const ProductProvider = ({ children }: ProductProviderI) => {
   }, []);
 
   return (
-    <ProductContext.Provider value={{ products }}>
+    <ProductContext.Provider value={{ products, categories }}>
       {children}
     </ProductContext.Provider>
   );

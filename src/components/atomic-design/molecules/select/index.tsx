@@ -9,18 +9,8 @@ import {
   SelectList,
   SelectOption,
   Container,
+  IconContainer,
 } from "./styles";
-
-interface SelectI {
-  options?: [];
-  inputName?: string;
-  name?: string;
-  value?: Function;
-  onChange?: Function;
-  label?: string;
-  placeHolder?: string;
-  isDisabled?: boolean;
-}
 
 const Select = ({
   options,
@@ -31,17 +21,16 @@ const Select = ({
   label,
   placeHolder,
   isDisabled,
-}: SelectI) => {
+  setCategory,
+}) => {
   const [show, setShow] = useState(false);
 
   const handleClick = () => setShow(!show);
 
   return (
     <Container>
-      <InputLabel htmlFor={inputName} isDisabled={isDisabled}>
-        {label}
-      </InputLabel>
-      <SelectInput onClick={handleClick} isDisabled={isDisabled}>
+      <InputLabel htmlFor={inputName}>{label}</InputLabel>
+      <SelectInput onClick={handleClick}>
         <Container>
           <SelectLabel htmlFor={name}>{value}</SelectLabel>
           <SelectList
@@ -57,20 +46,21 @@ const Select = ({
               </option>
             )}
             {options.map((option) => (
-              <SelectOption key={option.id} value={option.text}>
-                {option.text}
+              <SelectOption key={option} value={option}>
+                {option}
               </SelectOption>
             ))}
           </SelectList>
         </Container>
-
-        <Button
-          variant="icon"
-          ariaLabel={show ? "open" : "close"}
-          disabled={isDisabled}
-        >
-          <Icon iconType="chevron" />
-        </Button>
+        <IconContainer>
+          <Button
+            variant="icon"
+            ariaLabel={show ? "open" : "close"}
+            disabled={isDisabled}
+          >
+            <Icon iconType="chevron" />
+          </Button>
+        </IconContainer>
       </SelectInput>
     </Container>
   );

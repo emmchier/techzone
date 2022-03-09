@@ -1,18 +1,12 @@
 import styled from "styled-components";
 
-type SelectTypes = {
-  isDisabled: boolean;
-  openClose: boolean;
-};
-
-export const SelectInput = styled.div<SelectTypes>`
+export const SelectInput = styled.div`
   width: 100%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  margin-top: ${({ theme }) => theme.spacing(5)};
   margin-bottom: ${({ theme }) => theme.spacing(10)};
   ${({ isDisabled }) =>
     isDisabled
@@ -29,10 +23,10 @@ export const Container = styled.div`
   }
 `;
 
-export const Icon = styled.div<SelectTypes>`
+export const IconContainer = styled.div`
   position: absolute;
   transform: rotate(0);
-  right: ${({ theme }) => theme.spacing(1)};
+  right: ${({ theme }) => theme.spacing(5)};
   ${({ openClose }) =>
     openClose
       ? "button { transform: rotate(180deg) }"
@@ -47,20 +41,13 @@ export const Icon = styled.div<SelectTypes>`
   }
 `;
 
-export const InputLabel = styled.label<SelectTypes>`
+export const InputLabel = styled.label`
   font-style: normal;
-  color: ${({ isDisabled }) =>
-    isDisabled ? `lightGray` : ({ theme }) => theme.color.neutral.grey900};
+  display: none;
 `;
 
 export const SelectLabel = styled.label`
   display: none;
-`;
-
-export const BackgroundGradient = styled.span`
-  width: 75px;
-  height: 100%;
-  position: absolute;
 `;
 
 export const SelectList = styled.select`
@@ -70,8 +57,8 @@ export const SelectList = styled.select`
   color: ${({ theme }) => theme.color.neutral.grey900};
   border-radius: ${({ theme }) => theme.border.radius12};
   font-style: normal;
-  padding: ${({ theme }) => theme.spacing(15)};
-  background-color: ${({ theme }) => theme.color.brand.light};
+  padding: ${({ theme }) => theme.spacing(5)};
+  background-color: ${({ theme }) => theme.color.neutral.white};
   -webkit-appearance: none;
   -moz-appearance: none;
   -o-appearance: none;
@@ -81,13 +68,13 @@ export const SelectList = styled.select`
   margin: 0;
   &:focus {
     color: ${({ theme }) => theme.color.neutral.grey900};
-    border: 2px solid ${({ theme }) => theme.color.neutral.grey900};
+    border: 2px solid ${({ theme }) => theme.color.neutral.grey300};
     background-color: ${({ theme }) => theme.color.neutral.white};
     outline: none;
   }
   &:disabled {
-    border: 2px solid ${({ theme }) => theme.color.neutral.grey200} !important;
-    color: ${({ theme }) => theme.color.neutral.grey200} !important;
+    border: 2px solid ${({ theme }) => theme.color.brand.light} !important;
+    color: ${({ theme }) => theme.color.brand.light} !important;
     background-color: transparent;
   }
   &::-ms-expand {
@@ -97,7 +84,7 @@ export const SelectList = styled.select`
     padding: ${({ theme }) => theme.spacing(5)};
   }
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-    padding: ${({ theme }) => theme.spacing(3)};
+    padding: ${({ theme }) => theme.spacing(5)};
   }
 `;
 

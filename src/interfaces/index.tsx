@@ -18,10 +18,12 @@ export interface Product {
     hdUrl: string;
     url: string;
   };
+  categories: string[];
 }
 
 export type ProductType = {
   products: Product[];
+  categories: string[];
 };
 
 export interface Toast {

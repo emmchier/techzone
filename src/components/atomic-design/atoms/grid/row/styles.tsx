@@ -82,7 +82,6 @@ export const GridList = styled.ul<GridListI>`
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
-  margin-top: calc(var(--bs-gutter-y) * -1);
   margin-right: calc(var(--bs-gutter-x) / -2);
   margin-left: calc(var(--bs-gutter-x) / -2);
   ${({ theme, gap }) => gapStyles(theme, gap)};
@@ -93,6 +92,5 @@ export const GridList = styled.ul<GridListI>`
     max-width: 100%;
     padding-right: calc(var(--bs-gutter-x) / 2);
     padding-left: calc(var(--bs-gutter-x) / 2);
-    margin-top: var(--bs-gutter-y);
   }
 `;

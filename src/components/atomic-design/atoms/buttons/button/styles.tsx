@@ -3,9 +3,9 @@ import styled, { css, DefaultTheme } from "styled-components";
 export interface ButtonI {
   children: React.ReactNode;
   size: string;
-  state: string;
+  state?: string;
   variant: string;
-  ariaLabel: string;
+  ariaLabel?: string;
 }
 
 const sizeStyles = (theme: DefaultTheme, size: string) =>

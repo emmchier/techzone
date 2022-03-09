@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
 
 import { useContext } from "react";
+import Heading from "../components/atomic-design/atoms/heading";
 import Toast from "../components/atomic-design/atoms/toast";
-import ProductFilter from "../components/atomic-design/organisms/product-filter";
+import Filter from "../components/atomic-design/organisms/filter";
 import WalkthroughList from "../components/atomic-design/organisms/walkthrough-list";
 import Page from "../components/common/page";
 import Section from "../components/common/section";
@@ -21,7 +22,12 @@ const Home: NextPage = () => {
     >
       <Section container="sm">
         <WalkthroughList list={walkthroughList} />
-        <ProductFilter />
+      </Section>
+      <Section container="sm">
+        <Heading type="l2" variant="h2">
+          <span>tech</span> products
+        </Heading>
+        <Filter />
       </Section>
       <Toast
         type={toast.type}
