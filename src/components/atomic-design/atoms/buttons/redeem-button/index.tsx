@@ -39,12 +39,16 @@ const RedeemButton = ({ id, cost }: RedeemTypes) => {
       state={processing === true && "processing"}
     >
       {processing !== true ? setTitle : "Processing..."}
-      <Icon
-        iconType="logoCircle"
-        color={points < cost ? theme.color.neutral.grey500 : "#FFFFFF"}
-        background={points < cost ? "#FFFFFF" : "url(#paint0_linear_485_5621)"}
-      />
-      {cost ? rest : 0}
+      {processing !== true && (
+        <Icon
+          iconType="logoCircle"
+          color={points < cost ? theme.color.neutral.grey500 : "#FFFFFF"}
+          background={
+            points < cost ? "#FFFFFF" : "url(#paint0_linear_485_5621)"
+          }
+        />
+      )}
+      {processing !== true && cost && rest}
     </Button>
   );
 };

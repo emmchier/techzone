@@ -40,8 +40,8 @@ const stateStyles = (theme, state: string) =>
     processing: css`
       background: ${theme.color.brand.default} !important;
       box-shadow: ${theme.shadow.elevation1.default} !important;
-      opacity: 0.8;
-      cursor: inherit;
+      opacity: 0.5;
+      cursor: inherit !important;
       &:hover,
       &:active {
         filter: brightness(100%) !important;

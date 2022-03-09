@@ -38,22 +38,3 @@ export const Header = styled.div`
 export const Body = styled.div`
   padding: ${({ theme }) => theme.spacing(5)};
 `;
-
-export const PointOptions = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.spacing(2)};
-  justify-content: space-between;
-  margin: ${({ theme }) => theme.spacing(9)} 0
-    ${({ theme }) => theme.spacing(5)} 0;
-
-  li {
-    width: 100%;
-    button {
-      width: 100%;
-    }
-  }
-`;
