@@ -6,6 +6,7 @@ const Content = styled.div`
   box-shadow: ${({ theme }) => theme.shadow.elevation1.default};
   background: rgba(255, 255, 255, 0.7);
   padding: ${({ theme }) => theme.spacing(2)};
+  margin-bottom: ${({ theme }) => theme.spacing(10)};
   overflow: hidden;
 
   div:nth-child(1) {

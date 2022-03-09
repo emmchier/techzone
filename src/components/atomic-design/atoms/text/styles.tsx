@@ -1,35 +1,35 @@
-import styled, { css } from "styled-components";
+import styled, { css, DefaultTheme } from "styled-components";
 
 type ParagraphI = {
-  type?: string;
-  color?: string;
-  weight?: string;
-  cap?: string;
+  type: string;
+  color: string;
+  weight: string;
+  cap: string;
 };
 
-const typeStyles = (theme, type: string) =>
+const typeStyles = (theme: DefaultTheme, type: string) =>
   ({
     l1: css`
       font-size: ${theme.font.text.l1.desk.size};
-      line-height: ${theme.font.text.l1.desk.lineHeight};
+      line-height: ${theme.font.text.lineHeight};
 
       @media only screen and (${theme.breakpoints.tablet}) {
         font-size: ${theme.font.text.l1.mob.size};
-        line-height: ${theme.font.text.l1.mob.lineHeight};
+        line-height: ${theme.font.text.lineHeight};
       }
     `,
     l2: css`
       font-size: ${theme.font.text.l2.desk.size};
-      line-height: ${theme.font.text.l2.desk.lineHeight};
+      line-height: ${theme.font.text.lineHeight};
 
       @media only screen and (${theme.breakpoints.tablet}) {
         font-size: ${theme.font.text.l2.mob.size};
-        line-height: ${theme.font.text.l2.mob.lineHeight};
+        line-height: ${theme.font.text.lineHeight};
       }
     `,
   }[type]);
 
-const colorStyles = (theme, color: string) =>
+const colorStyles = (theme: DefaultTheme, color: string) =>
   ({
     white: css`
       color: ${theme.color.neutral.white};
@@ -42,7 +42,7 @@ const colorStyles = (theme, color: string) =>
     `,
   }[color]);
 
-const weightStyles = (theme, weight: string) =>
+const weightStyles = (theme: DefaultTheme, weight: string) =>
   ({
     light: css`
       font-weight: ${theme.font.weight.light};

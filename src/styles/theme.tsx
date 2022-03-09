@@ -1,5 +1,3 @@
-// main theme
-
 export const theme = {
   color: {
     neutral: {

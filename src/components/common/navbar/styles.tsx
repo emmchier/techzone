@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { fadeIn } from "../../ui/animations/pulse";
 
 type NavbarTypes = {
-  isFixed?: boolean;
+  isFixed: boolean;
 };
 
 export const Header = styled.header`

@@ -31,25 +31,23 @@ const ProductFilter = () => {
   const { products } = useContext(ProductContext) as ProductType;
   const [categories, setCategories] = useState([]);
 
-  const getCategories = useMemo(() => {
-    const tags = products.reduce((acc, cat) => {
-      return [...acc, ...cat.category];
-    }, []);
-    return [...new Set(tags)];
-  }, [products]);
-
-  console.log(getCategories);
+  // const getCategories = useMemo(() => {
+  //   const tags = products.reduce((acc, cat) => {
+  //     return [...acc, ...cat.category];
+  //   }, []);
+  //   return [...new Set(tags)];
+  // }, [products]);
 
   return (
     <>
-      <Select
+      {/* <Select
         options={options}
         inputName="interest"
         name="interest"
         value="interest"
         // onChange={handleChange}
         label="I’m interested in..."
-      />
+      /> */}
       <ProductList list={products} />
     </>
   );

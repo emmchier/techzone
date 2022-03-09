@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
-import { UserContext, UserI } from "../../../../../context";
-import Button from "../../../atoms/buttons/button";
 
+import { UserContext } from "../../../../../context";
+import { UserType } from "../../../../../interfaces";
+import Button from "../../../atoms/buttons/button";
 import Icon from "../../../atoms/icon";
 import AeropayModule from "../aeropay-module";
 
@@ -10,7 +11,7 @@ import { Container, MenuContent, Content, ArrowContainer } from "./styles";
 const AeropayDropdown = ({ isSkeleton = false }) => {
   const [show, setShow] = useState(false);
 
-  const { user } = useContext<UserI>(UserContext);
+  const { user } = useContext(UserContext) as UserType;
 
   return (
     <Container

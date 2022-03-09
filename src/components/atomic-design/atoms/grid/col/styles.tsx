@@ -3,11 +3,11 @@ import styled from "styled-components";
 type Column = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 interface GridItemI {
-  xs?: Column;
-  sm?: Column;
-  md?: Column;
-  lg?: Column;
-  xlg?: Column;
+  xs: Column;
+  sm: Column;
+  md: Column;
+  lg: Column;
+  xlg: Column;
 }
 
 const getBreackpoint = (bpt: Column) => {

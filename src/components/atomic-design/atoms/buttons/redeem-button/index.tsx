@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
-import { postPoints, postReedem } from "../../../../../api/service";
+
+import { postReedem } from "../../../../../api/service";
 import { ToastContext, UserContext } from "../../../../../context";
 import { showCustomToast } from "../../../../../helpers";
 import { ToastType, UserType } from "../../../../../interfaces";

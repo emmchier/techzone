@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const SelectInput = styled.div`
+type SelectTypes = {
+  isDisabled: boolean;
+  openClose: boolean;
+};
+
+export const SelectInput = styled.div<SelectTypes>`
   width: 100%;
   position: relative;
   display: flex;
@@ -24,7 +29,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Icon = styled.div`
+export const Icon = styled.div<SelectTypes>`
   position: absolute;
   transform: rotate(0);
   right: ${({ theme }) => theme.spacing(1)};
@@ -42,12 +47,10 @@ export const Icon = styled.div`
   }
 `;
 
-export const InputLabel = styled.label`
+export const InputLabel = styled.label<SelectTypes>`
   font-style: normal;
-  ${({ isDisabled }) =>
-    isDisabled
-      ? `color: lightGray`
-      : `color: ${({ theme }) => theme.color.neutral.grey900}`};
+  color: ${({ isDisabled }) =>
+    isDisabled ? `lightGray` : ({ theme }) => theme.color.neutral.grey900};
 `;
 
 export const SelectLabel = styled.label`

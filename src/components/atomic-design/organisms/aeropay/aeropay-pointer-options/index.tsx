@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
+
 import { postPoints } from "../../../../../api/service";
 import { ToastContext, UserContext } from "../../../../../context";
 import { pointerOptions } from "../../../../../domain/pointer-options";
 import { showCustomToast } from "../../../../../helpers";
 import { ToastType, UserType } from "../../../../../interfaces";
-
 import Button from "../../../atoms/buttons/button";
 import Icon from "../../../atoms/icon";
 import { PointerItem, PointOptions } from "./styles";

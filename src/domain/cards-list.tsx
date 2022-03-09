@@ -1,5 +1,3 @@
-import { BrowseIcon, ChooseIcon, EnjoyIcon } from "../components/ui/icons";
-
 export const walkthroughList = [
   {
     id: 0,

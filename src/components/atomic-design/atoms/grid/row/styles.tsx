@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, DefaultTheme } from "styled-components";
 
 type Spacing = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
@@ -6,7 +6,7 @@ export interface GridListI {
   gap?: Spacing;
 }
 
-const gapStyles = (theme, gap: string) =>
+const gapStyles = (theme: DefaultTheme, gap: string) =>
   ({
     0: css`
       --bs-gutter-x: 0;

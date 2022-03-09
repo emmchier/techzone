@@ -1,14 +1,14 @@
-import styled, { css } from "styled-components";
+import styled, { css, DefaultTheme } from "styled-components";
 
 export interface ButtonI {
-  children?: React.ReactNode;
-  size?: string;
-  state?: string;
-  variant?: string;
-  ariaLabel?: string;
+  children: React.ReactNode;
+  size: string;
+  state: string;
+  variant: string;
+  ariaLabel: string;
 }
 
-const sizeStyles = (theme, size: string) =>
+const sizeStyles = (theme: DefaultTheme, size: string) =>
   ({
     big: css`
       padding: ${theme.spacing(5)} ${theme.spacing(8)};
@@ -26,16 +26,14 @@ const sizeStyles = (theme, size: string) =>
     medium: css`
       padding: ${theme.spacing(1.5)} ${theme.spacing(4.8)};
       border-radius: ${theme.border.radius12} !important;
-      /* padding: 8px 24px; */
     `,
     small: css`
       padding: ${theme.spacing(1)} 0};
       border-radius: ${theme.border.radius12} !important;
-      /* padding: 4px 16px; */
     `,
   }[size]);
 
-const stateStyles = (theme, state: string) =>
+const stateStyles = (theme: DefaultTheme, state: string) =>
   ({
     processing: css`
       background: ${theme.color.brand.default} !important;
@@ -77,7 +75,7 @@ const stateStyles = (theme, state: string) =>
     `,
   }[state]);
 
-const variantStyles = (theme, variant: string) =>
+const variantStyles = (theme: DefaultTheme, variant: string) =>
   ({
     contained: css`
       color: ${theme.color.neutral.white};
@@ -102,9 +100,6 @@ const variantStyles = (theme, variant: string) =>
         background: ${theme.color.neutral.grey200};
         border: 1px solid transparent;
       }
-
-      @media only screen and (${theme.breakpoints.tablet}) {
-      }
     `,
     outlined: css`
       background: transparent;
@@ -116,11 +111,6 @@ const variantStyles = (theme, variant: string) =>
       &:disabled {
         border: 1px solid ${theme.color.neutral.grey200};
         color: ${theme.color.neutral.grey200};
-      }
-
-      @media only screen and (${theme.breakpoints.tablet}) {
-      }
-      @media only screen and (${theme.breakpoints.mobile}) {
       }
     `,
     text: css`
@@ -138,16 +128,8 @@ const variantStyles = (theme, variant: string) =>
         -webkit-text-fill-color: transparent;
       }
 
-      &:active {
-      }
-
       &:disabled {
         color: ${theme.color.neutral.grey200};
-      }
-
-      @media only screen and (${theme.breakpoints.tablet}) {
-      }
-      @media only screen and (${theme.breakpoints.mobile}) {
       }
     `,
     icon: css`

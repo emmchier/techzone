@@ -1,13 +1,13 @@
-import styled, { css } from "styled-components";
+import styled, { css, DefaultTheme } from "styled-components";
 import { fadeIn } from "../../../ui/animations/pulse";
 
 export type ToastI = {
-  type?: string;
-  message?: string;
-  isShowing?: boolean;
+  type: string;
+  message: string;
+  isShowing: boolean;
 };
 
-const typeStyles = (theme, type: string) =>
+const typeStyles = (theme: DefaultTheme, type: string) =>
   ({
     success: css`
       border: 2px solid ${theme.color.green.default};

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, DefaultTheme } from "styled-components";
 
 type HeadingI = {
   type?: string;
@@ -6,7 +6,7 @@ type HeadingI = {
   cap?: string;
 };
 
-const typesStyles = (theme, type: string) =>
+const typesStyles = (theme: DefaultTheme, type: string) =>
   ({
     l1: css`
       font-size: ${theme.font.title.l1.desk.size};
@@ -21,7 +21,7 @@ const typesStyles = (theme, type: string) =>
       line-height: ${theme.font.title.l2.desk.lineHeight};
 
       span {
-        color: ${theme.color.neutral.blue};
+        color: ${theme.color.brand.blue};
         font-weight: ${theme.font.weight.bold};
       }
 

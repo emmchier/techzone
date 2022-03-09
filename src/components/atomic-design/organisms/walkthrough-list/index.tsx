@@ -1,6 +1,6 @@
 import React from "react";
-import useIsMobile from "../../../../hooks/useIsMobile";
 
+import useIsMobile from "../../../../hooks/useIsMobile";
 import Col from "../../atoms/grid/col";
 import Row from "../../atoms/grid/row";
 import WalkthroughCard from "../../molecules/cards/walkthrough-card";

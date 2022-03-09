@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+
 import Button from "../buttons/button";
 import Icon from "../icon";
 import Text from "../text";

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 interface ContentI {
-  auto?: boolean;
-  color?: string;
+  auto: boolean;
+  color: string;
 }
 
 const Content = styled.section<ContentI>`
