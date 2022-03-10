@@ -20,7 +20,9 @@ import { ToastType } from "../interfaces";
 import {
   BackgroundHero,
   BackrgoundGradient,
+  BannerContent,
   BannerText,
+  Concha,
   HeroContainer,
   HomeContent,
   ImgContainer,
@@ -31,7 +33,7 @@ const Home: NextPage = () => {
   const { toast } = useContext(ToastContext) as ToastType;
 
   const handleAnchor = () => {
-    window.scrollTo({ top: 1200, behavior: "smooth" });
+    window.scrollTo({ top: 1300, behavior: "smooth" });
   };
 
   return (
@@ -43,47 +45,46 @@ const Home: NextPage = () => {
       {/* Banner Section */}
       <Section container="fluid">
         <HomeContent>
-          <Container>
-            <Row>
-              <Col xs={12} sm={12} md={12} lg={6} xlg={6}>
-                <BannerText>
-                  <Text type="l1" cap="allCaps">
-                    Explore the
-                  </Text>
-                  <Heading type="l1" variant="h1">
-                    <b>tech</b> zone
-                  </Heading>
-                  <Text type="l1" color="light">
-                    Here you’ll be able to exchange all of your hard-earned
-                    Aeropoints and exchange them for cool tech.
-                  </Text>
-                  <Button
-                    onClick={handleAnchor}
-                    ariaLabel="anchor to product section"
-                    size="big"
-                  >
-                    view products
-                    <Icon iconType="arrow" color="#FFFFFF" />
-                  </Button>
-                </BannerText>
-              </Col>
-              <Col xs={12} sm={12} md={12} lg={6} xlg={6}>
-                <HeroContainer>
-                  <ImgContainer>
+          <BannerContent>
+            <Container>
+              <Row>
+                <Col xs={12} sm={12} md={12} lg={6} xlg={6}>
+                  <BannerText>
+                    <Text type="l1" cap="allCaps">
+                      Explore the
+                    </Text>
+                    <Heading type="l1" variant="h1">
+                      <b>tech</b> zone
+                    </Heading>
+                    <Text type="l1" color="light">
+                      Here you’ll be able to exchange all of your hard-earned
+                      Aeropoints and exchange them for cool tech.
+                    </Text>
+                    <Button
+                      onClick={handleAnchor}
+                      ariaLabel="anchor to product section"
+                      size="big"
+                    >
+                      view products
+                      <Icon iconType="arrow" color="#FFFFFF" />
+                    </Button>
+                  </BannerText>
+                </Col>
+                <Col xs={12} sm={12} md={12} lg={6} xlg={6}>
+                  <HeroContainer>
                     <Image
                       src="/images/hero-desktop.png"
                       alt="Tech zone hero"
                       layout="responsive"
                       objectFit="contain"
-                      width="100%"
-                      height="100%"
+                      width="0"
+                      height="0"
                     />
-                  </ImgContainer>
-                  <BackgroundHero />
-                </HeroContainer>
-              </Col>
-            </Row>
-          </Container>
+                  </HeroContainer>
+                </Col>
+              </Row>
+            </Container>
+          </BannerContent>
           <WalkthroughContent>
             <BackrgoundGradient />
             <Container>

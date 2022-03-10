@@ -2,7 +2,12 @@ import styled from "styled-components";
 
 export const HomeContent = styled.div`
   height: auto;
-  padding: ${({ theme }) => theme.spacing(16)} 0;
+  padding: ${({ theme }) => theme.spacing(20)} 0;
+`;
+
+export const BannerContent = styled.div`
+  width: 100%;
+  padding-bottom: ${({ theme }) => theme.spacing(25)};
 `;
 
 export const BannerText = styled.div`
@@ -14,15 +19,14 @@ export const BannerText = styled.div`
 `;
 
 export const HeroContainer = styled.div`
-  position: relative;
-`;
+  background: ${({ theme }) => theme.color.specials.sectionBG};
+  border-radius: ${({ theme }) => theme.border.radius104};
+  height: 88%;
 
-export const ImgContainer = styled.div`
-  z-index: 1;
-  transform: scale(1.1);
+  span {
+    transform: scale(1.23) translateY(-110px);
+  }
 `;
-
-export const BackgroundHero = styled.div``;
 
 export const WalkthroughContent = styled.div`
   height: auto;
