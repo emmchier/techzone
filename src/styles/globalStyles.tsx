@@ -25,4 +25,10 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     color: ${({ theme }) => theme.color.neutral.grey600};
   }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
 `;

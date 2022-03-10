@@ -21,7 +21,6 @@ const Select = ({
   label,
   placeHolder,
   isDisabled,
-  setCategory,
 }) => {
   const [show, setShow] = useState(false);
 
@@ -53,12 +52,8 @@ const Select = ({
           </SelectList>
         </Container>
         <IconContainer>
-          <Button
-            variant="icon"
-            ariaLabel={show ? "open" : "close"}
-            disabled={isDisabled}
-          >
-            <Icon iconType="chevron" />
+          <Button variant="icon" ariaLabel={show ? "open" : "close"}>
+            <Icon iconType="chevron" direction="left" />
           </Button>
         </IconContainer>
       </SelectInput>

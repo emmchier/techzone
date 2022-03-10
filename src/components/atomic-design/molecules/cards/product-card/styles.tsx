@@ -3,7 +3,7 @@ import { pulse } from "../../../../ui/animations/pulse";
 import { SkeletonI } from "../card/styles";
 
 export const Content = styled.div`
-  margin-bottom: ${({ theme }) => theme.spacing(10)};
+  margin-bottom: ${({ theme }) => theme.spacing(18)};
   button {
     margin-top: ${({ theme }) => theme.spacing(4)} !important;
   }

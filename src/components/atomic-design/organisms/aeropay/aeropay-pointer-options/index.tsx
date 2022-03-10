@@ -11,9 +11,8 @@ import { PointerItem, PointOptions } from "./styles";
 
 const PointerOptions = () => {
   const { user, setUser } = useContext(UserContext) as UserType;
-  const [selected, setSelected] = useState(0);
-
   const { toast, setToast } = useContext(ToastContext) as ToastType;
+  const [selected, setSelected] = useState(0);
 
   const handlePoints = (newPoints: number) => {
     postPoints(newPoints);
@@ -33,7 +32,7 @@ const PointerOptions = () => {
           <PointerItem key={item.id}>
             <Button
               onClick={() => setSelected(item.value)}
-              ariaLabel={`add ${item.value} points`}
+              ariaLabel={item.ariaLabel}
               size="small"
               state={selected === item.value ? "selected" : "unselected"}
             >

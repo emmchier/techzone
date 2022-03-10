@@ -5,7 +5,7 @@ const Content = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: ${({ theme }) => theme.spacing(20)} 0;
+  ${({ theme }) => `padding: ${theme.spacing(40)} 0 ${theme.spacing(15)} 0`};
 `;
 
 export default Content;

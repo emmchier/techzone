@@ -1,49 +1,38 @@
 import styled from "styled-components";
 
 export const SelectInput = styled.div`
-  width: 100%;
-  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   cursor: pointer;
-  margin-bottom: ${({ theme }) => theme.spacing(10)};
-  ${({ isDisabled }) =>
-    isDisabled
-      ? `span { display: none;}`
-      : `span { background: linear-gradient(to right, transparent, rgba(235, 237, 245, 1) 69%); transform: translateX(-40px); border-radius: 8px}`}
+  position: relative;
+  z-index: 1;
 `;
 
 export const Container = styled.div`
-  cursor: pointer;
-  position: relative;
-  width: 100%;
-  &:focus-within label {
-    color: ${({ theme }) => theme.color.neutral.grey900};
-  }
+  display: flex;
+  align-items: center;
 `;
 
 export const IconContainer = styled.div`
   position: absolute;
   transform: rotate(0);
-  right: ${({ theme }) => theme.spacing(5)};
-  ${({ openClose }) =>
-    openClose
-      ? "button { transform: rotate(180deg) }"
-      : "button { transform: rotate(0) }"};
+  right: -${({ theme }) => theme.spacing(4)};
+  z-index: 0;
   button {
     width: ${({ theme }) => theme.spacing(20)};
-    &:disabled {
-      svg {
-        opacity: 0.3;
-      }
-    }
   }
 `;
 
 export const InputLabel = styled.label`
-  font-style: normal;
-  display: none;
+  font-size: ${({ theme }) => theme.font.text.l1.desk.size};
+  line-height: ${({ theme }) => theme.font.text.lineHeight};
+  font-weight: ${({ theme }) => theme.font.weight.medium};
+  color: ${({ theme }) => theme.color.neutral.grey600};
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
 `;
 
 export const SelectLabel = styled.label`
@@ -51,43 +40,47 @@ export const SelectLabel = styled.label`
 `;
 
 export const SelectList = styled.select`
-  width: 100%;
+  width: 35vh;
   cursor: pointer;
   overflow: hidden;
-  color: ${({ theme }) => theme.color.neutral.grey900};
-  border-radius: ${({ theme }) => theme.border.radius12};
-  font-style: normal;
-  padding: ${({ theme }) => theme.spacing(5)};
+  color: ${({ theme }) => theme.color.neutral.grey600};
+  ${({ theme }) => `padding: ${theme.spacing(3)} ${theme.spacing(4)}`};
   background-color: ${({ theme }) => theme.color.neutral.white};
+  border: 1px solid ${({ theme }) => theme.color.neutral.grey300};
+  font-size: ${({ theme }) => theme.font.text.l1.desk.size};
+  line-height: ${({ theme }) => theme.font.text.lineHeight};
+  border-radius: ${({ theme }) => theme.border.radius16};
   -webkit-appearance: none;
   -moz-appearance: none;
   -o-appearance: none;
   appearance: none;
   outline: none;
-  border: 2px solid transparent;
-  margin: 0;
+  margin-left: ${({ theme }) => theme.spacing(4)};
+
   &:focus {
-    color: ${({ theme }) => theme.color.neutral.grey900};
-    border: 2px solid ${({ theme }) => theme.color.neutral.grey300};
-    background-color: ${({ theme }) => theme.color.neutral.white};
+    color: ${({ theme }) => theme.color.neutral.grey600};
     outline: none;
   }
+
   &:disabled {
     border: 2px solid ${({ theme }) => theme.color.brand.light} !important;
     color: ${({ theme }) => theme.color.brand.light} !important;
     background-color: transparent;
   }
+
   &::-ms-expand {
     display: none;
   }
+
   @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
-    padding: ${({ theme }) => theme.spacing(5)};
+    padding: ${({ theme }) => theme.spacing(3)};
   }
+
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-    padding: ${({ theme }) => theme.spacing(5)};
+    margin: 0;
   }
 `;
 
 export const SelectOption = styled.option`
-  color: ${({ theme }) => theme.color.neutral.grey900};
+  color: ${({ theme }) => theme.color.neutral.grey600};
 `;

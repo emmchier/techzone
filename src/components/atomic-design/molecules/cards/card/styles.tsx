@@ -11,6 +11,7 @@ export const Content = styled.div`
   border-radius: ${({ theme }) => theme.border.radius16};
   box-shadow: ${({ theme }) => theme.shadow.elevation1.default};
   overflow: hidden;
+  background: ${({ theme }) => theme.color.neutral.white};
 `;
 
 export const ImageContent = styled.div<SkeletonI>`
