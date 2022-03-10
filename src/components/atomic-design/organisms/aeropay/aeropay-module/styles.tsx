@@ -23,6 +23,10 @@ export const Content = styled.div<DropdownI>`
   margin-top: ${({ theme }) => theme.spacing(4.5)};
 
   @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    width: 30%;
+  }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     width: 100%;
   }
 `;

@@ -2,13 +2,22 @@ import styled from "styled-components";
 
 export const HomeContent = styled.div`
   height: auto;
-  padding: ${({ theme }) => theme.spacing(20)} 0;
+  padding-top: ${({ theme }) => theme.spacing(20)};
+  padding-bottom: ${({ theme }) => theme.spacing(20)};
 `;
 
 export const BannerContent = styled.div`
   position: relative;
   width: 100%;
-  padding-bottom: ${({ theme }) => theme.spacing(25)};
+  padding-bottom: ${({ theme }) => theme.spacing(15)};
+
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    padding-bottom: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto !important;
+    width: 50%;
+  }
 `;
 
 export const BannerText = styled.div`
@@ -18,16 +27,33 @@ export const BannerText = styled.div`
     margin-bottom: ${({ theme }) => theme.spacing(16)};
     width: 80%;
   }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 export const HeroContainer = styled.div`
   position: relative;
   background: ${({ theme }) => theme.color.specials.sectionBG};
   border-radius: ${({ theme }) => theme.border.radius104};
+  box-shadow: ${({ theme }) => theme.shadow.elevation1.default};
   height: 88%;
 
   span {
     transform: scale(1.23) translateY(-110px);
+
+    @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    background: transparent;
+    box-shadow: none;
   }
 `;
 
@@ -47,7 +73,7 @@ export const WalkthroughContent = styled.div`
 export const BackrgoundGradient = styled.span`
   background: ${({ theme }) => theme.color.specials.sectionBG};
   width: 100%;
-  height: 50vh;
+  height: 45vh;
   z-index: 0;
   position: absolute;
 `;

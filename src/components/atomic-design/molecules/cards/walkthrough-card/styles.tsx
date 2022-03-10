@@ -20,7 +20,6 @@ const Content = styled.div`
       p {
         margin-left: ${({ theme }) => theme.spacing(3)};
         font-size: ${({ theme }) => theme.font.title.l3.desk.size};
-        line-height: ${({ theme }) => theme.font.title.l3.desk.lineHeight};
         text-transform: uppercase;
         font-style: normal;
         background: ${({ theme }) => theme.color.brand.default};
@@ -33,6 +32,11 @@ const Content = styled.div`
           font-size: ${({ theme }) => theme.font.title.l3.mob.size};
           line-height: ${({ theme }) => theme.font.title.l3.mob.lineHeight};
         }
+      }
+    }
+    div:nth-child(2) {
+      p:nth-child(1) {
+        line-height: ${({ theme }) => theme.spacing(5)} !important;
       }
     }
   }

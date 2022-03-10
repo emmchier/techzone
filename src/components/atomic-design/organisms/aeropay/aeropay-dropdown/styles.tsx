@@ -11,6 +11,8 @@ export const Container = styled.div``;
 
 export const Content = styled.div<DropdownI>`
   transform: translateY(10px);
+  position: relative;
+  z-index: 999;
   svg {
     width: ${({ theme }) => theme.spacing(7.5)};
     height: ${({ theme }) => theme.spacing(7.5)};

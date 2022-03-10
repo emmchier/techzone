@@ -77,7 +77,7 @@ const Card = ({
           </Text>
         </TitleContainer>
         <DescriptionContainer isSkeleton={isSkeleton}>
-          <Text type="l2" cap="allCaps" color="light">
+          <Text type="l2" color="light">
             {description && description}
           </Text>
         </DescriptionContainer>
