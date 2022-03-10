@@ -51,11 +51,6 @@ const Select = ({
             ))}
           </SelectList>
         </Container>
-        <IconContainer>
-          <Button variant="icon" ariaLabel={show ? "open" : "close"}>
-            <Icon iconType="chevron" direction="left" />
-          </Button>
-        </IconContainer>
       </SelectInput>
     </Container>
   );

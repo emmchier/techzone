@@ -10,17 +10,12 @@ export const SelectInput = styled.div`
 `;
 
 export const Container = styled.div`
+  width: 100% !important;
   display: flex;
   align-items: center;
-`;
 
-export const IconContainer = styled.div`
-  position: absolute;
-  transform: rotate(0);
-  right: -${({ theme }) => theme.spacing(4)};
-  z-index: 0;
-  button {
-    width: ${({ theme }) => theme.spacing(20)};
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    display: block;
   }
 `;
 
@@ -29,6 +24,7 @@ export const InputLabel = styled.label`
   line-height: ${({ theme }) => theme.font.text.lineHeight};
   font-weight: ${({ theme }) => theme.font.weight.medium};
   color: ${({ theme }) => theme.color.neutral.grey600};
+  margin-right: ${({ theme }) => theme.spacing(3)};
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     display: none;
@@ -40,7 +36,6 @@ export const SelectLabel = styled.label`
 `;
 
 export const SelectList = styled.select`
-  width: 35vh;
   cursor: pointer;
   overflow: hidden;
   color: ${({ theme }) => theme.color.neutral.grey600};
@@ -50,12 +45,20 @@ export const SelectList = styled.select`
   font-size: ${({ theme }) => theme.font.text.l1.desk.size};
   line-height: ${({ theme }) => theme.font.text.lineHeight};
   border-radius: ${({ theme }) => theme.border.radius16};
+
+  /* Arrow */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  outline: none;
-  margin-left: ${({ theme }) => theme.spacing(4)};
+  background-image: linear-gradient(45deg, transparent 50%, #252f3d 50%),
+    linear-gradient(135deg, blue 50%, transparent 50%),
+    linear-gradient(to right, #ffffff, #ffffff);
+  background-position: calc(100% - 20px) calc(1em + 5px),
+    calc(100% - 15px) calc(1em + 5px), 100% 0;
+  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+  background-repeat: no-repeat;
 
   &:focus {
     color: ${({ theme }) => theme.color.neutral.grey600};
@@ -78,9 +81,12 @@ export const SelectList = styled.select`
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     margin: 0;
+    position: relative;
+    width: 100% !important;
   }
 `;
 
 export const SelectOption = styled.option`
+  width: 100% !important;
   color: ${({ theme }) => theme.color.neutral.grey600};
 `;

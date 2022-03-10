@@ -11,12 +11,21 @@ export const Content = styled.div`
     margin-bottom: ${({ theme }) => theme.spacing(5)};
     align-items: flex-start;
   }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    width: 100%;
+
+    select {
+      margin-bottom: ${({ theme }) => theme.spacing(5)};
+    }
+  }
 `;
 
 export const Filters = styled(Content)`
   margin: 0;
 
   @media only screen and (${({ theme }) => theme.breakpoints.tabletLandscape}) {
+    margin: 0;
     flex-direction: column;
   }
 `;
@@ -37,13 +46,16 @@ export const CategoryFilter = styled(Content)`
 `;
 
 export const SortFilter = styled(Content)`
-  ul {
-    display: flexbox;
-    overflow-x: scroll;
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    margin: 0;
+    ul {
+      display: flexbox;
+      overflow-x: scroll;
+    }
   }
 `;
 
-export const PagerFilter = styled(Content)`
+export const PagerFilter = styled.div`
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     display: none;
   }

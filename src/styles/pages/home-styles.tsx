@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const HomeContent = styled.div`
+  height: auto;
+`;
+
 export const BannerText = styled.div`
   p:nth-child(3) {
     margin-top: ${({ theme }) => theme.spacing(8)};
@@ -10,27 +14,20 @@ export const BannerText = styled.div`
 
 export const HeroContainer = styled.div`
   position: relative;
-
-  img {
-    background: transparent;
-    position: absolute !important;
-    z-index: 1;
-    transform: scale(1.25);
-  }
 `;
 
-export const BackgroundHero = styled.div`
-  height: 75vh;
-  z-index: 0;
-  background: ${({ theme }) => theme.color.specials.sectionBG};
-  border-radius: ${({ theme }) => theme.border.radius104};
-  transform: translateY(-516px);
+export const ImgContainer = styled.div`
+  position: absolute;
+  z-index: 1;
+  transform: scale(1.25);
 `;
+
+export const BackgroundHero = styled.div``;
 
 export const WalkthroughContent = styled.div`
+  height: auto;
   width: 100%;
   position: relative;
-  height: 100vh !important;
   display: flex;
   align-items: center;
 
@@ -43,7 +40,7 @@ export const WalkthroughContent = styled.div`
 export const BackrgoundGradient = styled.span`
   background: ${({ theme }) => theme.color.specials.sectionBG};
   width: 100%;
-  height: 55vh;
+  height: 50vh;
   z-index: 0;
   position: absolute;
 `;

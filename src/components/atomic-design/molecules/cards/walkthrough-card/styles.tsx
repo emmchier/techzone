@@ -10,7 +10,6 @@ const Content = styled.div`
   overflow: hidden;
 
   div:nth-child(1) {
-    background-color: ${({ theme }) => theme.color.neutral.white};
     div:nth-child(1) {
       padding: 0;
 

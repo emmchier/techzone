@@ -14,6 +14,7 @@ import {
   Filters,
   Item,
   List,
+  PagerFilter,
   SortFilter,
 } from "./styles";
 
@@ -85,7 +86,9 @@ const FilterHeader = ({ filteredList, setFilteredList }) => {
           </List>
         </SortFilter>
       </Filters>
-      <Pager />
+      <PagerFilter>
+        <Pager />
+      </PagerFilter>
     </Content>
   );
 };
