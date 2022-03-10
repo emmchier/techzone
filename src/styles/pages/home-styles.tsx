@@ -16,7 +16,7 @@ export const BannerContent = styled.div`
     display: flex;
     justify-content: center;
     margin: 0 auto !important;
-    width: 50%;
+    width: 40%;
   }
 `;
 
@@ -26,6 +26,10 @@ export const BannerText = styled.div`
     margin-top: ${({ theme }) => theme.spacing(8)};
     margin-bottom: ${({ theme }) => theme.spacing(16)};
     width: 80%;
+
+    @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+      width: 100%;
+    }
   }
 
   @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
@@ -47,13 +51,17 @@ export const HeroContainer = styled.div`
     transform: scale(1.23) translateY(-110px);
 
     @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
-      transform: scale(1) translateY(0);
+      transform: scale(1.4) translateY(0);
+      position: relative;
+      z-index: 1;
     }
   }
 
   @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
     background: transparent;
     box-shadow: none;
+
+    margin-top: ${({ theme }) => theme.spacing(14)};
   }
 `;
 
@@ -68,6 +76,10 @@ export const WalkthroughContent = styled.div`
     position: relative;
     z-index: 1;
   }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    align-items: flex-end;
+  }
 `;
 
 export const BackrgoundGradient = styled.span`
@@ -76,6 +88,10 @@ export const BackrgoundGradient = styled.span`
   height: 45vh;
   z-index: 0;
   position: absolute;
+
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    height: 57vh;
+  }
 `;
 
 export const WavesContainer = styled.span`

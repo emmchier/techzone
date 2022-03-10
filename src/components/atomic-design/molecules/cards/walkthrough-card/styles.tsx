@@ -40,6 +40,10 @@ const Content = styled.div`
       }
     }
   }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    margin-bottom: ${({ theme }) => theme.spacing(3)};
+  }
 `;
 
 export default Content;
