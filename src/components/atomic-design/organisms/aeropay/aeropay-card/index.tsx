@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { UserContext, UserI } from "../../../../../context";
+import WavesMultiPattern from "../../../../ui/waves-multi-pattern";
 
 import Icon from "../../../atoms/icon";
 import Text from "../../../atoms/text";
@@ -36,7 +37,7 @@ const AeropayCard = () => {
         </UserInfo>
       </InfoContent>
       <WavesContent>
-        <AeropayCardPattern />
+        <WavesMultiPattern />
       </WavesContent>
     </Content>
   );

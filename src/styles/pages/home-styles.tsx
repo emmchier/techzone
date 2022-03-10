@@ -6,11 +6,13 @@ export const HomeContent = styled.div`
 `;
 
 export const BannerContent = styled.div`
+  position: relative;
   width: 100%;
   padding-bottom: ${({ theme }) => theme.spacing(25)};
 `;
 
 export const BannerText = styled.div`
+  position: relative;
   p:nth-child(3) {
     margin-top: ${({ theme }) => theme.spacing(8)};
     margin-bottom: ${({ theme }) => theme.spacing(16)};
@@ -19,6 +21,7 @@ export const BannerText = styled.div`
 `;
 
 export const HeroContainer = styled.div`
+  position: relative;
   background: ${({ theme }) => theme.color.specials.sectionBG};
   border-radius: ${({ theme }) => theme.border.radius104};
   height: 88%;
@@ -46,5 +49,9 @@ export const BackrgoundGradient = styled.span`
   width: 100%;
   height: 50vh;
   z-index: 0;
+  position: absolute;
+`;
+
+export const WavesContainer = styled.span`
   position: absolute;
 `;

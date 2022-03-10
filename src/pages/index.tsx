@@ -14,6 +14,8 @@ import WalkthroughList from "../components/atomic-design/organisms/walkthrough-l
 import Container from "../components/common/container";
 import Page from "../components/common/page";
 import Section from "../components/common/section";
+import { WavesPattern } from "../components/ui/icons";
+import WavesMultiPattern from "../components/ui/waves-multi-pattern";
 import { ToastContext } from "../context";
 import { walkthroughList } from "../domain/cards-list";
 import { ToastType } from "../interfaces";
@@ -27,6 +29,7 @@ import {
   HomeContent,
   ImgContainer,
   WalkthroughContent,
+  WavesContainer,
 } from "../styles/pages/home-styles";
 
 const Home: NextPage = () => {
@@ -46,6 +49,9 @@ const Home: NextPage = () => {
       <Section container="fluid">
         <HomeContent>
           <BannerContent>
+            <WavesContainer>
+              <WavesMultiPattern />
+            </WavesContainer>
             <Container>
               <Row>
                 <Col xs={12} sm={12} md={12} lg={6} xlg={6}>
@@ -85,6 +91,7 @@ const Home: NextPage = () => {
               </Row>
             </Container>
           </BannerContent>
+
           <WalkthroughContent>
             <BackrgoundGradient />
             <Container>
