@@ -30,6 +30,10 @@ import {
 const Home: NextPage = () => {
   const { toast } = useContext(ToastContext) as ToastType;
 
+  const handleAnchor = () => {
+    window.scrollTo({ top: 1200, behavior: "smooth" });
+  };
+
   return (
     <Page
       title="Aerolab | Developer Challenge"
@@ -53,7 +57,11 @@ const Home: NextPage = () => {
                     Here you’ll be able to exchange all of your hard-earned
                     Aeropoints and exchange them for cool tech.
                   </Text>
-                  <Button ariaLabel="anchor to product section" size="big">
+                  <Button
+                    onClick={handleAnchor}
+                    ariaLabel="anchor to product section"
+                    size="big"
+                  >
                     view products
                     <Icon iconType="arrow" color="#FFFFFF" />
                   </Button>

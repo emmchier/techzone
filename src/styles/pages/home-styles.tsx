@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const HomeContent = styled.div`
   height: auto;
+  padding: ${({ theme }) => theme.spacing(16)} 0;
 `;
 
 export const BannerText = styled.div`
@@ -17,9 +18,8 @@ export const HeroContainer = styled.div`
 `;
 
 export const ImgContainer = styled.div`
-  position: absolute;
   z-index: 1;
-  transform: scale(1.25);
+  transform: scale(1.1);
 `;
 
 export const BackgroundHero = styled.div``;

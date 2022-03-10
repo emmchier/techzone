@@ -38,11 +38,11 @@ export const theme = {
     title: {
       l1: {
         desk: {
-          size: "11.111rem", // 200px
+          size: "10rem", // 180px
           lineHeight: "80%",
         },
         mob: {
-          size: "5.333rem", // 96px
+          size: "5.5rem", // 96px
           lineHeight: "80%",
         },
       },
