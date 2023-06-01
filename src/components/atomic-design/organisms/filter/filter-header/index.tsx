@@ -1,11 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { FC, useContext, useEffect, useState } from "react";
 
 import { ProductContext } from "../../../../../context";
 import { sortButtons } from "../../../../../domain/sort-buttons";
 import { ProductType } from "../../../../../interfaces";
 import Button from "../../../atoms/buttons/button";
-import Text from "../../../atoms/text";
-import ButtonGroup from "../../../molecules/button-group";
 import Select from "../../../molecules/select";
 import Pager from "../../pager";
 import {
@@ -18,17 +16,21 @@ import {
   SortFilter,
 } from "./styles";
 
-const FilterHeader = ({ filteredList, setFilteredList }) => {
+interface FilterHeaderProps {
+  filteredList: string[];
+  setFilteredList: (e: any) => any;
+}
+
+const FilterHeader: FC<FilterHeaderProps> = ({ filteredList, setFilteredList }) => {
   const { products, categories } = useContext(ProductContext) as ProductType;
   const [value, setValue] = useState("All Products");
   const [selected, setSelected] = useState("Most Recent");
-  console.log(filteredList);
 
   useEffect(() => {
     value === "All Products" && setFilteredList(products);
   }, [setFilteredList, products, value]);
 
-  const handleCategoryFilter = ({ target }) => {
+  const handleCategoryFilter = ({ target }: any) => {
     setValue(target.value);
     let filtered;
     value === "All Products"
@@ -37,7 +39,7 @@ const FilterHeader = ({ filteredList, setFilteredList }) => {
     setFilteredList(filtered);
   };
 
-  const handleSortFilter = (item) => {
+  const handleSortFilter = (item: any) => {
     setSelected(item);
     switch (item) {
       case "Most Recent":

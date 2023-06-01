@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { FC, useContext, useState } from "react";
 
 import { UserContext } from "../../../../../context";
 import { UserType } from "../../../../../interfaces";
@@ -8,7 +8,13 @@ import AeropayModule from "../aeropay-module";
 
 import { Container, MenuContent, Content, ArrowContainer } from "./styles";
 
-const AeropayDropdown = ({ isSkeleton = false }) => {
+interface DropdownI {
+  isSkeleton?: boolean;
+  show?: boolean;
+  fade?: boolean;
+}
+
+const AeropayDropdown: FC<DropdownI> = ({ isSkeleton = false }) => {
   const [show, setShow] = useState(false);
 
   const { user } = useContext(UserContext) as UserType;

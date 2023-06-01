@@ -2,9 +2,9 @@ import styled, { css, DefaultTheme } from "styled-components";
 import { fadeIn } from "../../../ui/animations/pulse";
 
 export type ToastI = {
-  type: string;
-  message: string;
-  isShowing: boolean;
+  type?: string;
+  message?: string;
+  isShowing?: boolean;
 };
 
 const typeStyles = (theme: DefaultTheme, type: string) =>
@@ -32,7 +32,7 @@ export const Container = styled.div<ToastI>`
           animation: ${fadeIn} 0.6s ease-in-out;
           display: none;
         `};
-  ${({ theme, type }) => typeStyles(theme, type)};
+  ${({ theme, type }) => typeStyles(theme, type as string)};
 `;
 
 export const Content = styled.div<ToastI>`
@@ -40,7 +40,7 @@ export const Content = styled.div<ToastI>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  ${({ theme, type }) => typeStyles(theme, type)};
+  ${({ theme, type }) => typeStyles(theme, type as string)};
   border-radius: ${({ theme }) => theme.border.radius12};
   box-shadow: ${({ theme }) => theme.shadow.elevation1.default};
   background-color: ${({ theme }) => theme.color.neutral.white};

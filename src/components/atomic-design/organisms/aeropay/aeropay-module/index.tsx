@@ -1,11 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
 
 import Text from "../../../atoms/text";
 import AeropayCard from "../aeropay-card";
 import PointerOptions from "../aeropay-pointer-options";
 import { Body, Content, Header } from "./styles";
 
-const AeropayModule = ({ show, setShow }) => {
+interface AeropayModuleProps {
+  show: boolean;
+  setShow: (e: boolean) => void;
+}
+
+const AeropayModule: FC<AeropayModuleProps> = ({ show, setShow }) => {
   return (
     <Content
       show={show && show}

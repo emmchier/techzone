@@ -52,6 +52,7 @@ export const SelectList = styled.select`
   box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
   background-image: linear-gradient(45deg, transparent 50%, #252f3d 50%),
     linear-gradient(135deg, blue 50%, transparent 50%),
     linear-gradient(to right, #ffffff, #ffffff);

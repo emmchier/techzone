@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useIsMobile = (media = "mobile") => {
+const useIsMobile = (media: keyof typeof breakpoints = "mobile") => {
   const breakpoints = {
     smallMobile: 479,
     mobile: 767,

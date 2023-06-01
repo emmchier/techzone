@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import Button from "../../atoms/buttons/button";
-import Icon from "../../atoms/icon";
+import React, { FC, useState } from "react";
 
 import {
   SelectInput,
@@ -9,11 +7,21 @@ import {
   SelectList,
   SelectOption,
   Container,
-  IconContainer,
 } from "./styles";
 
-const Select = ({
-  options,
+interface SelectProps {
+  options: string[];
+  inputName: string;
+  name: string;
+  value: string;
+  onChange: React.ChangeEventHandler<HTMLSelectElement> ;
+  label: string;
+  placeHolder?: string;
+  isDisabled?: boolean
+}
+
+const Select: FC<SelectProps> = ({
+  options = [],
   inputName,
   name,
   value,

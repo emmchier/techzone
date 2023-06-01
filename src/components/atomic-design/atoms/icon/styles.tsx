@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 type ContentTypes = {
-  direction: string;
+  direction: "up" | "down" | "left" | "right" | "";
 };
 
 const directionStyles = (direction: string) =>

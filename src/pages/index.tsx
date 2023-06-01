@@ -20,14 +20,11 @@ import { ToastContext } from "../context";
 import { walkthroughList } from "../domain/cards-list";
 import { ToastType } from "../interfaces";
 import {
-  BackgroundHero,
   BackrgoundGradient,
   BannerContent,
   BannerText,
-  Concha,
   HeroContainer,
   HomeContent,
-  ImgContainer,
   WalkthroughContent,
   WavesContainer,
 } from "../styles/pages/home-styles";

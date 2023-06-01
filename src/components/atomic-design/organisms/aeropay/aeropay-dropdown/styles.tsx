@@ -2,9 +2,9 @@ import styled, { css } from "styled-components";
 import { pulse } from "../../../../ui/animations/pulse";
 
 export interface DropdownI {
-  isSkeleton: boolean;
-  show: boolean;
-  fade: boolean;
+  isSkeleton?: boolean;
+  show?: boolean;
+  fade?: boolean;
 }
 
 export const Container = styled.div``;

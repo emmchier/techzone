@@ -24,7 +24,7 @@ type IconsType = {
   color?: string;
   background?: string;
   stroke?: string;
-  direction?: string;
+  direction?: "up" | "down" | "left" | "right" | "";
 };
 
 const Icon = ({
@@ -68,7 +68,7 @@ const Icon = ({
         break;
     }
   };
-  return <Content direction={direction}>{getIcon()}</Content>;
+  return <Content direction={direction || ""}>{getIcon()}</Content>;
 };
 
 export default Icon;

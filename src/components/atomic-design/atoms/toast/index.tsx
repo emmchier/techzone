@@ -5,7 +5,13 @@ import Icon from "../icon";
 import Text from "../text";
 import { Container, Content, ToastInfo } from "./styles";
 
-const Toast = ({ type = "success", message = "", isShowing = false }) => {
+type ToastI = {
+  type?: string;
+  message?: string;
+  isShowing?: boolean;
+};
+
+const Toast = ({ type = "success", message = "", isShowing = false }: ToastI) => {
   return (
     <Container isShowing={isShowing}>
       <Content type={type}>

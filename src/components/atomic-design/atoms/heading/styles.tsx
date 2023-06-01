@@ -1,7 +1,7 @@
 import styled, { css, DefaultTheme } from "styled-components";
 
 type HeadingI = {
-  type?: string;
+  type: string;
   weight?: string;
   cap?: string;
 };

@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
-import { UserContext, UserI } from "../../../../../context";
+import { UserContext } from "../../../../../context";
 import WavesMultiPattern from "../../../../ui/waves-multi-pattern";
 
 import Icon from "../../../atoms/icon";
 import Text from "../../../atoms/text";
-
-import AeropayCardPattern from "../aeropay-card-pattern";
 
 import {
   BrandInfo,
@@ -16,7 +14,7 @@ import {
 } from "./styles";
 
 const AeropayCard = () => {
-  const { user } = useContext<UserI>(UserContext);
+  const { user } = useContext<any>(UserContext);
 
   return (
     <Content>

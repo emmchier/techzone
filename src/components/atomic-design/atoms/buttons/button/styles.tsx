@@ -2,10 +2,9 @@ import styled, { css, DefaultTheme } from "styled-components";
 
 export interface ButtonI {
   children: React.ReactNode;
-  size: string;
-  state?: string;
-  variant: string;
-  ariaLabel?: string;
+  size?: string;
+  state: string | boolean;
+  variant?: string;
 }
 
 const sizeStyles = (theme: DefaultTheme, size: string) =>
@@ -28,7 +27,7 @@ const sizeStyles = (theme: DefaultTheme, size: string) =>
       border-radius: ${theme.border.radius12} !important;
     `,
     small: css`
-      padding: ${theme.spacing(1)} 0};
+      padding: ${theme.spacing(1)} 0;
       border-radius: ${theme.border.radius12} !important;
     `,
   }[size]);
@@ -158,9 +157,9 @@ const Content = styled.button<ButtonI>`
   line-height: ${({ theme }) => theme.font.text.lineHeight};
   transition: ${({ theme }) => theme.transition.main};
   font-weight: ${({ theme }) => theme.font.weight.medium};
-  ${({ theme, size }) => sizeStyles(theme, size)};
-  ${({ theme, state }) => stateStyles(theme, state)};
-  ${({ theme, variant }) => variantStyles(theme, variant)};
+  ${({ theme, size }) => sizeStyles(theme, size as string)};
+  ${({ theme, state }) => stateStyles(theme, state as string)};
+  ${({ theme, variant }) => variantStyles(theme, variant as string)};
 
   b {
     background: ${({ theme }) => theme.color.brand.default};
